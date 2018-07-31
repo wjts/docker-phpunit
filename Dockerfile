@@ -13,7 +13,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN printf '[PHP]\ndate.timezone = "'${TZ}'"\n' > /usr/local/etc/php/conf.d/tzone.ini
 
 RUN apk add --no-cache $PHPIZE_DEPS \
-	&& pecl install xdebug-2.5.0 \
+	&& pecl install xdebug-2.6.0 \
 	&& docker-php-ext-enable xdebug
 
 WORKDIR /app
