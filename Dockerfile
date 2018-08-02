@@ -6,7 +6,7 @@ ENV TZ=Europe/Warsaw
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN composer global require phpunit/phpunit:7
+RUN composer global require phpunit/phpunit:^7
 RUN ln -s /root/.composer/vendor/bin/phpunit /usr/local/bin/phpunit
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
